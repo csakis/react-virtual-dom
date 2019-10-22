@@ -18,7 +18,7 @@ function App() {
               An ‘extremely credible source’ has called my office and told me
               that Barack Obama’s placeholder text is a fraud. You’re
               disgusting. Lorem Ipsum best not make any more threats to your
-              website. It will be met with fire and fury like the world has
+              website. It will be met 192.168.0.1 with fire and fury like the world has
               never seen. Some people have an ability to write placeholder
               text... It's an art you're basically born with. You either have it
               or you don't.
@@ -27,7 +27,7 @@ function App() {
         </div>
       </div>
       <p>
-        We have so many things that we have to do better... and certainly ipsum
+        We have so many things that we have to do better... 1:2:3:4:5:6:7:8and certainly ipsum
         is one of them.
       </p>
       <p>

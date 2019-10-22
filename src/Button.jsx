@@ -1,10 +1,11 @@
 import React from "react";
 import parser from "vdom-parser";
+import ipRegex from 'ip-regex'
 const traverse = obj => {
   if (obj.hasOwnProperty('children') && obj.children ) {
     obj.children.map(x=>traverse(x))
   }
-  if(obj.hasOwnProperty('text') && obj.text) {
+  if(obj.hasOwnProperty('text') && ipRegex().test(obj.text)) {
     console.log(obj); 
   }
   return;
