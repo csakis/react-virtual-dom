@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <header>
-        <p>Kukucs</p>
+        <p>Hamana</p>
         <a href="https://reactjs.org">Learn React</a>
       </header>
       <h1>Holly molly! Its working</h1>
