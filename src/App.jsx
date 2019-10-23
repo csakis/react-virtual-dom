@@ -1,10 +1,13 @@
 import { hot } from "react-hot-loader";
 import React from "react";
-import Button from "./Button";
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Btn from "./Button";
 
 function App() {
   return (
-    <div>
+    <Container>
+      <CssBaseline />
       <header>
         <p>Hamana</p>
         <a href="https://reactjs.org">Learn React</a>
@@ -66,8 +69,8 @@ function App() {
         Lorem Ipsum better hope that there are no "tapes" of our conversations
         before he starts leaking to the press!
       </p>
-      <Button></Button>
-    </div>
+      <Btn/>
+    </Container>
   );
 }
 

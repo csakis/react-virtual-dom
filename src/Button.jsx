@@ -1,4 +1,5 @@
 import React from "react";
+import Button from '@material-ui/core/Button';
 import parser from "vdom-parser";
 import ipRegex from 'ip-regex'
 const traverse = obj => {
@@ -16,8 +17,8 @@ const handleClick = () => {
   traverse(vNode);
   
 };
-const Button = () => {
-  return <button onClick={handleClick}>Click!</button>;
+const Btn = () => {
+  return <Button color='primary' variant='outlined' onClick={handleClick}>Click!</Button>;
 };
 
-export default Button;
+export default Btn;
