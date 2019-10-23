@@ -19,6 +19,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-hot-loader": "^4.12.15",
+    "snabbdom": "^0.7.3",
     "typeface-roboto": "0.0.75",
     "vdom-parser": "^1.4.1",
     "virtual-dom": "^2.1.1"
