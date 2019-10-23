@@ -6,11 +6,11 @@ const SimpleText = () => (
     <h2>Air You Had Beginning Don't Fruitful</h2>
     <div>
       <div>
-        <p>Kind appear moved fly creepeth.</p>
+        <p>Kind appear the moved fly creepeth.</p>
       </div>
     </div>
 
-    <h2>Good Female Were</h2>
+    {/* <h2>Good Female Were</h2>
     <p>
       Over good signs image be years whales sixth can't divided fifth let may.
     </p>
@@ -30,7 +30,7 @@ const SimpleText = () => (
       I
 <strong>fish</strong>
       moving in their given.
-    </p>
+    </p> */}
   </div>
 );
 
