@@ -1,37 +1,29 @@
-import { hot } from "react-hot-loader";
-import React from "react";
+import { hot } from 'react-hot-loader';
+import React from 'react';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Btn from "./Button";
+import Btn from './Button';
+import IpText from './IpText';
 
 function App() {
   return (
     <Container>
       <CssBaseline />
-      <header className="whatevs">
-        <p>Hamana</p>
-        <a href="https://reactjs.org">Learn React</a>
-      </header>
-      <h1>Holly molly! Its working</h1>
-      <h2 style={{color: "red"}}>Does it reload?</h2>
-      <div>
-        <div>
-          <div>
-            <p>
-              An ‘extremely credible source’ has called my office and told me
-              that Barack Obama’s placeholder text is a fraud. You’re
-              disgusting. Lorem Ipsum best not make any more threats to your
-              website. It will be met 192.168.0.1 with fire and fury like the world has
-              never seen. Some people have an ability to write placeholder
-              text... It's an art you're basically born with. You either have it
-              or you don't.
-            </p>
-          </div>
-        </div>
-      </div>
+      <Btn />
+      <IpText />
+
       <p>
-        We have so many things that we have to do better... 1:2:3:4:5:6:7:8and certainly ipsum
-        is one of them.
+        An ‘extremely credible source’ has called my office and told me that
+        Barack Obama’s placeholder text is a fraud. You’re disgusting. Lorem
+        Ipsum best not make any more threats to your website. It will be met
+        192.168.0.1 with fire and fury like the world has never seen. Some
+        people have an ability to write placeholder text... It's an art you're
+        basically born with. You either have it or you don't.
+      </p>
+
+      <p>
+        We have so many things that we have to do better... 1:2:3:4:5:6:7:8and
+        certainly ipsum is one of them.
       </p>
       <p>
         It’s about making placeholder text great again. That’s what people want,
@@ -69,7 +61,6 @@ function App() {
         Lorem Ipsum better hope that there are no "tapes" of our conversations
         before he starts leaking to the press!
       </p>
-      <Btn/>
     </Container>
   );
 }
