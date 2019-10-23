@@ -5,26 +5,6 @@ const ipText = () => (
       <div id="content" className="mw-body" role="main">
         <a id="top"></a>
         <div id="siteNotice" className="mw-body-content"></div>
-        <div className="mw-indicators mw-body-content">
-          <div id="mw-indicator-pp-default" className="mw-indicator">
-            <a
-              href="/wiki/Wikipedia:Protection_policy#semi"
-              title="This article is semi-protected."
-            >
-              <img
-                alt="Page semi-protected"
-                src="//upload.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/20px-Semi-protection-shackle.svg.png"
-                decoding="async"
-                width="20"
-                height="20"
-                srcSet="//upload.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/30px-Semi-protection-shackle.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/1/1b/Semi-protection-shackle.svg/40px-Semi-protection-shackle.svg.png 2x"
-                data-file-width="512"
-                data-file-height="512"
-              />
-            </a>
-          </div>
-        </div>
-
         <h1 id="firstHeading" className="firstHeading" lang="en">
           IP address
         </h1>

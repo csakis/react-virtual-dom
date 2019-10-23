@@ -1,35 +1,61 @@
-import React from "react";
-import Button from "@material-ui/core/Button";
-import parser from "vdom-parser";
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import parser from 'vdom-parser';
+import ipParser from './ipParser';
+
+let equal = require('deep-equal');
+
 // const toVNode = require("snabbdom/tovnode").default;
 // const h = require('snabbdom/h').default;
-const h = require("virtual-dom/h");
-const createElement = require("virtual-dom/create-element");
-const VNode = require("virtual-dom/vnode/vnode");
-const VText = require("virtual-dom/vnode/vtext");
-import ipRegex from "ip-regex";
-let oldNode = {};
+const h = require('virtual-dom/h');
+const createElement = require('virtual-dom/create-element');
+const VNode = require('virtual-dom/vnode/vnode');
+const VText = require('virtual-dom/vnode/vtext');
+const diff = require('virtual-dom/diff');
+const patch = require('virtual-dom/patch');
 
-const traverse = ({ tagName, properties = {}, children = [], text }) => {
-  let node;
-  if (tagName) {
-    node = new VNode(tagName, properties);
-  }
-  if (text) {
-    node = new VText(text);
-  }
-  if (Object.entries(oldNode).length === 0 && oldNode.constructor === Object) {
-    oldNode = node;
-  } else {
-    oldNode.children.push(node);
-  }
+const handleClick = () => {
+  const { body } = document;
 
-  if (children) {
-    const reducer = children.map(x => traverse(x));
-    oldNode.children.push(reducer);
-  }
-  return oldNode;
+  const oldDOM = parser(body);
+  const newDOM = ipParser(body);
+  console.log('eq:', equal(oldDOM, newDOM));
+
+  const difference = diff(oldDOM, newDOM);
+  console.log('TCL: handleClick -> difference', difference);
+  let rootNode = createElement(newDOM);
+  // console.log("TCL: handleClick -> root", root)
+ 
+  rootNode = patch(root, difference);
 };
+const Btn = () => (
+  <Button color="primary" variant="outlined" onClick={handleClick}>
+    Click!
+  </Button>
+);
+
+export default Btn;
+
+// const traverse = ({ tagName, properties = {}, children = [], text }) => {
+//   let node;
+//   if (tagName) {
+//     node = new VNode(tagName, properties);
+//   }
+//   if (text) {
+//     node = new VText(text);
+//   }
+//   if (Object.entries(oldNode).length === 0 && oldNode.constructor === Object) {
+//     oldNode = node;
+//   } else {
+//     oldNode.children.push(node);
+//   }
+
+//   if (children) {
+//     const reducer = children.map(x => traverse(x));
+//     oldNode.children.push(reducer);
+//   }
+//   return oldNode;
+// };
 
 // const newNode = new VNode(obj.tagName, obj.properties);
 // if (obj.hasOwnProperty("children") && obj.children) {
@@ -51,24 +77,3 @@ const traverse = ({ tagName, properties = {}, children = [], text }) => {
 // }
 // return newNode;
 // };
-const handleClick = () => {
-  const body = document.body;
-  // const parser = new DOMParser();
-  // const oldDom = parser.parseFromString(body, "text/xml");
-
-  const oldDom = parser(body);
-  // const oldDom = toVNode(body);
-  console.log(oldDom);
-
-  const newDOM = traverse(oldDom);
-  console.log(newDOM);
-};
-const Btn = () => {
-  return (
-    <Button color="primary" variant="outlined" onClick={handleClick}>
-      Click!
-    </Button>
-  );
-};
-
-export default Btn;
