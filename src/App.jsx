@@ -8,12 +8,12 @@ function App() {
   return (
     <Container>
       <CssBaseline />
-      <header>
+      <header className="whatevs">
         <p>Hamana</p>
         <a href="https://reactjs.org">Learn React</a>
       </header>
       <h1>Holly molly! Its working</h1>
-      <h2>Does it reload?</h2>
+      <h2 style={{color: "red"}}>Does it reload?</h2>
       <div>
         <div>
           <div>
