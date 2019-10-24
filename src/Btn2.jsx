@@ -1,32 +1,40 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import parser from 'vdom-parser';
-import ipParser from './ipParser';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import parser from "vdom-parser";
+import ipParser from "./ipParser";
 
-let equal = require('deep-equal');
+let equal = require("deep-equal");
 
 // const toVNode = require("snabbdom/tovnode").default;
 // const h = require('snabbdom/h').default;
-const h = require('virtual-dom/h');
-const createElement = require('virtual-dom/create-element');
-const VNode = require('virtual-dom/vnode/vnode');
-const VText = require('virtual-dom/vnode/vtext');
-const diff = require('virtual-dom/diff');
-const patch = require('virtual-dom/patch');
+const h = require("virtual-dom/h");
+const createElement = require("virtual-dom/create-element");
+const VNode = require("virtual-dom/vnode/vnode");
+const VText = require("virtual-dom/vnode/vtext");
+const diff = require("virtual-dom/diff");
+const patch = require("virtual-dom/patch");
 
 const handleClick = () => {
-  const { body } = document;
+  // const { body } = document;
 
-  const oldDOM = parser(body);
-  const newDOM = ipParser(body);
-  console.log('eq:', equal(oldDOM, newDOM));
+  // const oldDOM = parser(body);
+  // const newDOM = ipParser(body);
+  // console.log('eq:', equal(oldDOM, newDOM));
 
-  const difference = diff(oldDOM, newDOM);
-  console.log('TCL: handleClick -> difference', difference);
-  let rootNode = createElement(newDOM);
-  // console.log("TCL: handleClick -> root", root)
- 
-  rootNode = patch(root, difference);
+  // const difference = diff(oldDOM, newDOM);
+  // console.log('TCL: handleClick -> difference', difference);
+  // let rootNode = createElement(newDOM);
+  // // console.log("TCL: handleClick -> root", root)
+
+  // rootNode = patch(root, difference);
+
+  var tree = parser(document.body); // We need an initial tree
+  var rootNode = createElement(tree); // Create an initial root DOM node ...
+  document.body = rootNode;
+  var newTree = ipParser(document.body);
+  var patches = diff(tree, newTree);
+  rootNode = patch(rootNode, patches);
+  
 };
 const Btn2 = () => (
   <Button color="primary" variant="outlined" onClick={handleClick}>

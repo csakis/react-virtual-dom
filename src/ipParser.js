@@ -43,7 +43,7 @@ export default function parser(el, attr) {
     // most tags default to body
     if (doc.body.firstChild) {
       el = doc.getElementsByTagName('body')[0].firstChild;
-
+      render
       // some tags, like script and style, default to head
     } else if (
       doc.head.firstChild
@@ -97,8 +97,8 @@ function createNode(el, attr) {
  * @return  Object      VText
  */
 function createVirtualTextNode(el) {
-  if (el.nodeValue.includes('the')) {
-    console.log("TCL: createVirtualTextNode -> el.nodeValue", el.nodeValue)
+  if (ipRegex().test(el.nodeValue)) {
+    // console.log("TCL: createVirtualTextNode -> el.nodeValue", el.nodeValue)
     return new VText('***');
   }
   return new VText(el.nodeValue);
