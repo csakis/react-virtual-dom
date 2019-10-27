@@ -99,7 +99,7 @@ function createNode(el, attr) {
 function createVirtualTextNode(el) {
   if (ipRegex().test(el.nodeValue)) {
     // console.log("TCL: createVirtualTextNode -> el.nodeValue", el.nodeValue)
-    return new VText('***');
+    return new VText('***.***.***.***');
   }
   return new VText(el.nodeValue);
 }
